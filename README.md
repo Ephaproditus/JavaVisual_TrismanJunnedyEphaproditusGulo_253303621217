@@ -8,7 +8,7 @@ Proyek ini merupakan implementasi fondasi *class model* Java untuk aplikasi **Ch
 
 ## 📌 Screenshot Output Terminal
 
-![Output Terminal](screenshots/output.png)
+![Output Terminal](HASIL.png)
 
 ---
 
