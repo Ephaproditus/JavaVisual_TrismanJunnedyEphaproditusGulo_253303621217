@@ -8,8 +8,7 @@ Proyek ini merupakan implementasi fondasi *class model* Java untuk aplikasi **Ch
 
 ## 📌 Screenshot Output Terminal
 
-![Output Terminal](HASIL.png)
-
+![Output Terminal](Screenshot/HASIL.png)
 ---
 
 ## 📁 Struktur Folder Project
