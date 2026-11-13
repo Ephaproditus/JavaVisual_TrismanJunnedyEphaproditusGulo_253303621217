@@ -1,6 +1,8 @@
 package com.unpri.charactermanager.model;
 
 public class Character {
+    private static int totalCharacterCreated;
+
     private String name;
     private CharacterType type;
     private int level;
@@ -15,6 +17,7 @@ public class Character {
         this.hitPoints = 120;
         this.attackPower = 20;
         this.mana = 50;
+        totalCharacterCreated++;
     }
 
     public Character(String name, CharacterType type, int level, int hitPoints, int attackPower, int mana) {
@@ -30,6 +33,11 @@ public class Character {
         this.hitPoints = hitPoints;
         this.attackPower = attackPower;
         this.mana = mana;
+        totalCharacterCreated++;
+    }
+
+    public static int getTotalCharacterCreated() {
+        return totalCharacterCreated;
     }
 
     public String getName() {
