@@ -26,7 +26,7 @@ javavisual-tp03-[NIM]/
                         ├── Character.java
                         └── CharacterType.java
 
-
+```
 ---
 
 # Character Manager Java Visual TP5
@@ -62,5 +62,5 @@ Proyek ini merupakan pengembangan lanjutan dari modul Character Manager (Sprint 
 - Tautan Dokumen Analisis Google Docs: https://docs.google.com/document/d/YOUR_GOOGLE_DOCS_LINK_HERE/edit?usp=sharing
 (Catatan Akses: Diatur dengan izin Anyone with the link Viewer)
 
-## Dokumentasi Output Program
+## Screenshot Output Program
 Output eksekusi program terminal (menampilkan uji CRUD, penolakan duplikat, defensive copying, mini-challenge, rename, hingga eksperimen reference) telah diuji dan berjalan dengan sukses tanpa kendala.
