@@ -59,8 +59,8 @@ Proyek ini merupakan pengembangan lanjutan dari modul Character Manager (Sprint 
 - renameCharacter(oldName, newName): Method rancangan sendiri untuk mengubah nama karakter dengan validasi ketat terhadap nama kosong dan pencegahan bentrok nama dengan karakter lain yang sudah ada.
 
 ## Analisis dan Dokumentasi (Bagian D)
-- Tautan Dokumen Analisis Google Docs: https://docs.google.com/document/d/YOUR_GOOGLE_DOCS_LINK_HERE/edit?usp=sharing
-(Catatan Akses: Diatur dengan izin Anyone with the link Viewer)
+- Tautan Dokumen Analisis Google Docs: https://docs.google.com/document/d/17mQVz4Sup2ySj154_-H6PZ7psDAkIZMqWyOgDwHO_bQ/edit?usp=sharing
+
 
 ## Screenshot Output Program
 Output eksekusi program terminal (menampilkan uji CRUD, penolakan duplikat, defensive copying, mini-challenge, rename, hingga eksperimen reference) telah diuji dan berjalan dengan sukses tanpa kendala.
