@@ -14,10 +14,10 @@ public class Main {
         manager.addCharacter(new Character("Gandalf", CharacterType.MAGE, 10, 300, 80, 200));
         manager.addCharacter(new Character("Legolas", CharacterType.ARCHER, 3, 160, 30, 80));
 
-        // 2 Karakter baru untuk TP8 (Total 5 karakter)
+        // 3 Karakter tambahan (Total 6 karakter untuk TP10 dengan Zerstear level 15)
         manager.addCharacter(new Character("Casanova", CharacterType.MAGE, 7, 240, 25, 150));
         manager.addCharacter(new Character("Caraxes", CharacterType.HEALER, 12, 340, 95, 250));
-        manager.addCharacter(new Character("Zerstear", CharacterType.WARRIOR, 15, 400, 110, 40));
+        manager.addCharacter(new Character("Zerstear", CharacterType.WARRIOR, 15, 420, 120, 60)); // Level 15 (High Level)
 
         // Menjalankan GUI di Event Dispatch Thread (EDT)
         SwingUtilities.invokeLater(() -> {

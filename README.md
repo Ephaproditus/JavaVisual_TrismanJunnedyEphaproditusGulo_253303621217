@@ -88,3 +88,26 @@ Dalam arsitektur MVC yang diterapkan, kelas Main berperan sebagai Controller yan
   ![MainWindow Sebelum](Screenshot/TP8_Sebelum.png)
 - Screenshot 2 (6 Karakter — Rata-rata Level 8.67):
   ![MainWindow Sesudah](Screenshot/TP8_Sesudah.png)
+
+  ---
+
+  ## TP10 — Character Manager Sprint #4 (Theming, Properti Komponen & MVC)
+
+  ---
+
+### 1. Mengapa Warna Disimpan di AppTheme dan Bukan di Character?
+Pengaturan warna disimpan di kelas AppTheme (layer View) dan bukan di dalam kelas Character (layer Model) untuk menjaga pemisahan tanggung jawab (Separation of Concerns) pada arsitektur MVC. Kelas Character hanya fokus mengelola data dan aturan bisnis karakter tanpa bergantung pada pustaka grafis java.awt.Color. Dengan demikian, tampilan tema visual dapat diubah secara terpusat di satu tempat tanpa harus menyentuh atau merusak struktur data pada package model.
+
+### 2. Dua Properti Tambahan yang Dipilih dan Alasannya
+- setToolTipText() pada Kartu Karakter: Menampilkan ringkasan lengkap seluruh atribut karakter (termasuk nilai Mana yang tidak ditampilkan di kartu utama) saat kursor diarahkan ke kartu, sehingga tampilan kartu tetap ringkas namun informatif.
+- setEnabled(false) pada Karakter Level 1 (Rookie): Memberikan pembeda visual (efek teks redup) secara otomatis bagi karakter pemula yang masih berada di level 1 sebagai penanda status bahwa karakter tersebut belum siap diturunkan ke misi utama.
+
+### 3. Link Dokumen Analisis Properti & MVC (Bagian D)
+- Google Docs Analisis TP10: https://docs.google.com/document/d/1h79l414pdOZf5NFlvjPyC7lBw6iUGUz4GsD8T82VbNI/edit?usp=sharing
+(Akses dokumen diatur ke: Anyone with the link Viewer)
+
+### 4. Screenshots Perbandingan (Sebelum v0.3 vs Sesudah v0.4)
+- Sebelum (MainWindow v0.3):
+  ![MainWindow v0.3](Screenshot/TP8_Sesudah.png)
+- Sesudah (MainWindow v0.4 dengan AppTheme & Highlight Emas Level >= 5):
+  ![MainWindow v0.4](Screenshot/TP10_v04.png)
