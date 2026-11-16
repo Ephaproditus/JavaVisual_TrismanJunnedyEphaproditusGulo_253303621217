@@ -111,3 +111,51 @@ Pengaturan warna disimpan di kelas AppTheme (layer View) dan bukan di dalam kela
   ![MainWindow v0.3](Screenshot/TP8_Sesudah.png)
 - Sesudah (MainWindow v0.4 dengan AppTheme & Highlight Emas Level >= 5):
   ![MainWindow v0.4](Screenshot/TP10_v04.png)
+
+  ## TP12 — Character Manager Sprint #5 (Layout, UI Responsif & Analisis MVC)
+
+### 1. Wireframe Tata Letak (`MainWindow v0.5`)
+
+```text
++-----------------------------------------------------------------------+
+|                       CHARACTER MANAGER (Header)                      |  <- NORTH
+| [Total Karakter: 8]                         [Rata-rata Level: 7.75]   |  <- GridLayout(2,2)
+| [Karakter Elite (Lv>=5): 6]                     [HP Tertinggi: 420]   |
++---------------------------------------------------+-------------------+
+| +-----------------------------------------------+ | LEGENDA ROLE      |
+| | Arthur (WARRIOR - Merah Terang)         ALIVE | | [WARRIOR]         |
+| +-----------------------------------------------+ | [MAGE]            |  <- EAST
+| | Gandalf (MAGE - Ungu Terang)            ALIVE | | [ARCHER]          |     (BoxLayout
+| +-----------------------------------------------+ | [HEALER]          |      Y_AXIS)
+| | Legolas (ARCHER - Biru Terang)          ALIVE | |                   |
+| +-----------------------------------------------+ | (Vertical Glue)   |
+| | ... (JScrollPane berisi daftar kartu) ...     | | *Emas = Level >=5 |
++---------------------------------------------------+-------------------+
+| Zerstear Berhasil Ditambahkan                                    v0.5 |  <- SOUTH
++-----------------------------------------------------------------------+
+
+```
+### 2. Struktur Panel Bersarang (Nested Panels)
+Jendela utama `MainWindow` menggunakan `BorderLayout` sebagai kerangka utama dengan empat wilayah aktif (`NORTH`, `CENTER`, `EAST`, dan `SOUTH`). Wilayah `NORTH` berisi panel pembungkus `BorderLayout` yang menggabungkan judul aplikasi di atas dan panel statistik `GridLayout(2, 2)` di bawahnya. Wilayah `CENTER` menampung `JScrollPane` yang membungkus `scrollWrapperPanel` (`BorderLayout`), di mana `cardsGridPanel` (`GridLayout(0, 1)`) diletakkan pada posisi `NORTH` agar tinggi kartu karakter tetap proporsional dan tidak melar saat jendela diperbesar. Sementara itu, wilayah `EAST` menggunakan `BoxLayout` vertikal untuk legenda role, dan wilayah `SOUTH` memakai `BorderLayout` untuk memisahkan pesan status di kiri dan label versi `"v0.5"` di kanan.
+
+### 3. Alasan Panel Tambahan dan Layout yang Ditolak
+Panel tambahan yang dipilih adalah `GridLayout(2, 2)` di wilayah `NORTH` untuk menampilkan empat metrik ringkasan statistik karakter (Total Karakter, Rata-rata Level, Jumlah Karakter Elite, dan HP Tertinggi) dalam dua baris dan dua kolom yang sejajar rapi tanpa memakan banyak ruang vertikal. Sementara itu, `FlowLayout` ditolak untuk panel statistik ini karena `FlowLayout` akan membungkus komponen ke baris baru secara tidak teratur ketika jendela dikecilkan, sehingga merusak kesejajaran kolom statistik kiri dan kanan.
+
+### 4. Tabel Pengamatan Resize (Prediksi vs Hasil)
+| Kondisi Jendela | Prediksi Perilaku Layout | Hasil Aktual Saat Dijalankan |
+| :--- | :--- | :--- |
+| **Ukuran Awal (`pack()`)** | Jendela membuka sesuai ukuran ideal komponen; 4 wilayah `BorderLayout` terlihat lengkap dan seluruh kartu tertata rapi. | Sesuai prediksi. Jendela muncul pas di tengah layar dengan seluruh elemen terbaca jelas tanpa ruang kosong berlebih. |
+| **Jendela Dilebarkan & Dipertinggi** | Wilayah `CENTER` melebar ke samping mengikuti lebar jendela, tinggi kartu tetap stabil (tidak melar), dan `EAST` tetap selebar legenda. | Sesuai prediksi. Kartu melebar secara horizontal dengan rapi, tinggi kartu tetap proporsional berkat pembungkus `BorderLayout.NORTH`, dan legenda tetap merapat ke atas karena *vertical glue*. |
+| **Jendela Dikecilkan (Tinggi Dikurangi)** | `NORTH`, `SOUTH`, dan `EAST` tetap bertahan pada ukuran aslinya, sementara `CENTER` menyusut dan memunculkan *scrollbar* vertikal. | Sesuai prediksi. Header, statistik, dan bar status tidak terpotong, sedangkan daftar kartu di tengah otomatis memunculkan *scrollbar* untuk menggulir karakter ke bawah. |
+
+### 5. Link Dokumen Analisis Layout & MVC (Bagian D)
+Google Docs Analisis TP12: https://docs.google.com/document/d/1HfP8PnjSwDrjxAJ1-bG8nqeJo_hy3RHBwxiR2OKHX2U/edit?usp=sharing
+### 6. Screenshots Pengujian Responsivitas (v0.5)
+**Ukuran Awal (`pack()`):**
+![Ukuran Awal](Screenshot/TP12_Awal.png)
+
+**Jendela Dilebarkan:**
+![Jendela Dilebarkan](Screenshot/TP12_Lebar.png)
+
+**Jendela Dikecilkan (Scrollbar Muncul):**
+![Jendela Dikecilkan](Screenshot/TP12_Kecil.png)
